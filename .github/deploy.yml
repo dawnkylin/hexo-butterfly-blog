@@ -32,5 +32,3 @@ jobs:
       with:
         github_token: ${{ secrets.blog-deploy-token }}
         publish_dir: ./public
-        publish_branch: gh-pages
-        force_orphan: true  # 强制清空历史提交，避免残留文件冲突
