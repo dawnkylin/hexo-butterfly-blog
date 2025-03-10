@@ -103,12 +103,12 @@ theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: 
-    github: git@github.com:dawnkylin/hexo-butterfly-blog.git  # SSH 地址（推荐）
-    # 或 HTTPS 地址：https://github.com/你的用户名/你的仓库名.git
-  branch: gh-pages  # 部署到 gh-pages 分支
+# deploy:
+#   type: git
+#   repo: 
+#     github: git@github.com:dawnkylin/hexo-butterfly-blog.git  # SSH 地址（推荐）
+#     # 或 HTTPS 地址：https://github.com/你的用户名/你的仓库名.git
+#   branch: gh-pages  # 部署到 gh-pages 分支
 
 markdown:
   plugins:
