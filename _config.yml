@@ -4,8 +4,8 @@
 
 # Site
 title: dawnkylin's hexo-blog
-subtitle: '等天地梅花开'
-description: '做一个闲云野鹤'
+subtitle: 'Code Lover'
+description: '面向世界编程'
 keywords: 程序开发
 author: dawnkylin
 language: zh-CN
@@ -47,10 +47,10 @@ future: true
 syntax_highlighter: highlight.js
 highlight:
   line_number: false
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
   exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
@@ -106,7 +106,7 @@ theme: butterfly
 deploy:
   type: git
   repo: 
-    github: git@github.com:dawnkylin/hexo-blog.git  # SSH 地址（推荐）
+    github: git@github.com:dawnkylin/hexo-butterfly-blog.git  # SSH 地址（推荐）
     # 或 HTTPS 地址：https://github.com/你的用户名/你的仓库名.git
   branch: gh-pages  # 部署到 gh-pages 分支
 

@@ -5,6 +5,8 @@
 # English: https://butterfly.js.org/en/
 # --------------------------------------
 
+highlight_theme: false
+
 # --------------------------------------
 # Navigation Settings
 # --------------------------------------
@@ -564,7 +566,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use: 
+  use: Waline
   # 是否显示评论服务商的名字
   # Display the comment name next to the button
   text: true
@@ -943,7 +945,7 @@ lightbox: fancybox
 
 # Series
 series:
-  enable: false
+  enable: true
   # Order by title or date
   orderBy: 'title'
   # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -1076,6 +1078,7 @@ css_prefix: true
 inject:
   head:
     - <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/sypxzs/dist/思源屏显臻宋/result.css' />
+    - <link rel="stylesheet" href="/hexo-butterfly-blog/self/github.css">
   bottom:
     # - <script src="xxxx"></script>
 
