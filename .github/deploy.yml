@@ -15,12 +15,18 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '18'
+
+    - name: Cache node modules
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
     - name: Install Dependencies
       run: |
-        npm install -g hexo-cli
         npm install
+        npm install hexo-cli --save-dev
 
     - name: Generate Files
       run: |
