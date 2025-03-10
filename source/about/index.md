@@ -6,7 +6,7 @@ aside: false
 ---
 <div class="about-card">
   <!-- 头像 -->
-  <img src="https://dawnkylin.github.io/hexo_blog/img/avatar.png" 
+  <img src="https://dawnkylin.github.io/hexo-blog/img/avatar.png" 
        alt="头像" 
        class="avatar"
        style="width:150px; border-radius:50%; margin:0 auto 1rem; display:block;">

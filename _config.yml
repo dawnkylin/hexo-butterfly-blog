@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: dawnkylin's hexo_blog
+title: dawnkylin's hexo-blog
 subtitle: '等天地梅花开'
 description: '做一个闲云野鹤'
 keywords: 程序开发
@@ -13,7 +13,8 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://dawnkylin.github.io/hexo-butterfly-blog
+root: /hexo-butterfly-blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -45,7 +46,7 @@ relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
@@ -53,7 +54,7 @@ highlight:
   exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
-  line_number: true
+  line_number: false
   tab_replace: ''
   exclude_languages: ['mermaid']
 
@@ -103,7 +104,11 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: 
+    github: git@github.com:dawnkylin/hexo-blog.git  # SSH 地址（推荐）
+    # 或 HTTPS 地址：https://github.com/你的用户名/你的仓库名.git
+  branch: gh-pages  # 部署到 gh-pages 分支
 
 markdown:
   plugins:

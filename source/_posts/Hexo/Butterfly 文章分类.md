@@ -7,7 +7,6 @@ tags:
   - Butterfly
 categories:
   - Hexo
-  - Butterfly
 keywords:
 description:
 top_img:
