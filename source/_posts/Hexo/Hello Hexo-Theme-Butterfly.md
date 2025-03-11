@@ -9,6 +9,13 @@ tags:
 categories:
   - [Hexo]
   - [GitHub]
+keywords:
+description:
+top_img:
+cover:
+commets:
+katex:
+aplayer:
 ---
 
 本文关于hexo-theme-butterfly的搭建、部署和使用。
@@ -66,8 +73,6 @@ git pull origin master
 
 详细过程在[Butterfly 文檔(三) 主題配置 | Butterfly](https://butterfly.js.org/posts/4aa8abbe/)。
 
-我就不全部来一遍了，只记录一些我目前遇到的问题。
-
 ### 头像、顶部图片的存放位置
 
 头像和顶部图片放在`source/img`下，路径使用相对路径`/img/<filename>`即可，但是最后生成的地址是要加上`<your-blogname>`的：`https://your-username.github.io/your-blogname/img/<filename>`。头像会自动加，顶部图片却不会，需要手动加：
@@ -114,125 +119,15 @@ font:
 
 此处询问的deepseek：[Hexo Butterfly 主题文章分类设置 | dawnkylin's hexo_blog](https://dawnkylin.github.io/hexo-butterfly-blog/2025/03/03/Hexo/Butterfly%20%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/)。
 
-## 标签外挂和进阶使用
+## 标签外挂
 
 {% note orange 'fa fa-question' %}
 标签{% label 外挂 green %}？应该就是字面意思，是特别牛皮的标签！
 {% endnote %}
 
-### Note 或者 Bootstrap Callout
+[Butterfly 文檔(四) 標簽外挂 | Butterfly](https://butterfly.js.org/posts/ceeb73f)
 
-我认为这就是“装修过”的引用块，当然作用就不只是cite或quote了。
-
-{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger %}
-
-### Tag-hide
-
-```md
-// 文字隐藏
-{% hideInline content,display,bg,color %}
-哪个英文字母最酷？ {% hideInline 因为西装裤(C装酷),查看答案,#FF7242,#fff %}
-// 块隐藏
-{% hideBlock display,bg,color %}
-content
-{% endhideBlock %}
-// 收缩框、展开框
-{% hideToggle display,bg,color %}
-content
-{% endhideToggle %}
-```
-
-### Tabs
-
-```md
-{% tabs Unique name, [index] %}
-
-<!-- tab [Tab caption] [@icon] -->
-
-Any content (support inline tags too).
-
-<!-- endtab -->
-
-{% endtabs %}
-```
-
-{% tabs fruit, -1 %}
-
-<!-- tab apple @fa fa-star -->
-
-给你一个苹果
-
-<!-- endtab -->
-
-<!-- tab banana -->
-
-给你一个香蕉
-
-<!-- endtab -->
-
-<!-- tab orange -->
-
-给你一个橙子
-
-<!-- endtab -->
-
-{% endtabs %}
-
-### 按钮
-
-```md
-{% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
-{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger %}
-```
-
-### label
-
-```
-{% label text color %}
-```
-
-### inline img
-
-```md
-{% inlineImg [src] [height] %}
-```
-
-### 图廊 Gallery
-
-```md
-{% gallery true%}
-![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
-![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)
-![](https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg)
-![](https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg)
-![](https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg)
-![](https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg)
-![](https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg)
-![](https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg)
-{% endgallery %}
-```
-
-{% gallery true %}
-![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
-![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)
-![](https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg)
-![](https://i.loli.net/2019/12/25/d6QHbytlSYO4FBG.jpg)
-![](https://i.loli.net/2019/12/25/6nepIJ1xTgufatZ.jpg)
-![](https://i.loli.net/2019/12/25/E7Jvr4eIPwUNmzq.jpg)
-![](https://i.loli.net/2019/12/25/mh19anwBSWIkGlH.jpg)
-![](https://i.loli.net/2019/12/25/2tu9JC8ewpBFagv.jpg)
-{% endgallery %}
-
-### series 文章系列/合集
-
-```md
-{% series %}
-{% series [series name] %}
-```
-
-{% note blue 'fa fa-magic' %}
-需要在 front matter 给 series 属性一个值/名称。
-{% endnote %}
+## 进阶使用
 
 ### 侧边栏访客地图
 
@@ -250,11 +145,19 @@ bottom:
     html: '你获取到的<script>代码'
 ```
 
+{% note orange 'fa-solid fa-circle-exclamation' %}
+这个会可能被广告插件拦截，请将网站添加到白名单或关闭拦截插件。
+{% endnote %}
+
 ### 自定义代码配色
 
 [自定義代碼配色 | Butterfly](https://butterfly.js.org/posts/b37b5fe3/)
 
 如果你使用到highlight的话，就去[highlight.js/src/styles at main · highlightjs/highlight.js](https://github.com/highlightjs/highlight.js/tree/main/src/styles)选一个css文件，复制其中除`.hljs`外的样式代码到`source/self/theme-name.css`，然后根据前面链接的文章里提到修改几个全局变量，接着看看实际效果再调整如border样式之类的。
+
+### 图标
+
+[Font Awesome](https://fontawesome.com/)
 
 ## 部署博客到GitHub Pages
 
@@ -275,84 +178,10 @@ git checkout main
 git remote add origin https://github.com/<your-username>/<your-blogname>.git
 ```
 
-**第五步**：修改`_config.yml`
+**第五步**：部署
 
-```yml
-url: https://<your-username>.github.io/your-blogname  # 关键配置
-root: /your-blogname/  # 必须以斜杠开头和结尾
+参考 Hexo 文档即可：
 
-# Deployment
-deploy:
-  type: git
-  repo: 
-    github: git@github.com:<your-username>/your-blogname.git  # SSH 地址（推荐）
-    # 或 HTTPS 地址：https://github.com/<your-username>/your-blogname.git
-  branch: gh-pages  # 部署到 gh-pages 分支
-```
-
-**第六步**：设置 GitHub Pages，进入仓库的 Settings → Pages：
-
-- Branch: `gh-pages`
-- Path: `/ (root)`
-
-**第七步**：安装部署插件：
-
-```bash
-npm install hexo-deployer-git --save
-```
-
-**第八步**：部署：
-
-```bash
-hexo clean && hexo g && hexo deploy
-```
-
-这一步会生成`public`文件夹并将其推送到远程`gh-pages`分支，然后部署。
-
-也可以配置自动化部署：创建 workflow 文件`.github/workflows/deploy.yml`：
-
-```yml
-name: Deploy Hexo
-
-on:
-  push:
-    branches:
-      - main  # 根据你的源码分支修改
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    - name: Install Dependencies
-      run: |
-        npm install -g hexo-cli
-        npm install
-
-    - name: Generate Files
-      run: |
-        hexo clean
-        hexo generate
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        publish_branch: gh-pages
-```
-
-**第九步**：推送源码到主分支
-
-```bash
-git add .
-git commit -m 'initial commit'
-git push origin main
-```
+1. [在 GitHub Pages 上部署 Hexo | Hexo](https://hexo.io/zh-cn/docs/github-pages)
+2. [将 Hexo 部署到 GitLab Pages | Hexo](https://hexo.io/zh-cn/docs/gitlab-pages)
+3. [一键部署 | Hexo](https://hexo.io/zh-cn/docs/one-command-deployment)

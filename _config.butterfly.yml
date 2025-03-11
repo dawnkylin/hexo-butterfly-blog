@@ -273,8 +273,8 @@ noticeOutdate:
   limit_day: 365
   # Position: top / bottom
   position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
+  message_prev: 本文章距离上次更新已经过去了
+  message_next: 天，文章内容可能已经过时，请酌情品用！
 
 # --------------------------------------
 # Footer Settings
@@ -451,11 +451,12 @@ anchor:
   click_to_scroll: false
 
 # 图片描述
-photofigcaption: false
+# 优先显示图片的 title 属性，然后是 alt 属性
+photofigcaption: true
 
 # 复制相关配置
 copy:
-  enable: true
+  enable: false
   # Add the copyright information after copied content
   copyright:
     enable: false
@@ -490,7 +491,7 @@ math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
   use: katex
-  per_page: true
+  per_page: false
   hide_scrollbar: false
 
   mathjax:
@@ -623,7 +624,7 @@ valine:
 # Waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL: my-waline-olive.vercel.app
+  serverURL: https://my-waline-olive.vercel.app
   bg:
   # Use Waline pageview count as the page view count
   pageview: false
@@ -1109,7 +1110,7 @@ CDN:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
-    # busuanzi:
+    # busuanzi: 
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
