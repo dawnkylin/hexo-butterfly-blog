@@ -103,6 +103,7 @@ theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+# 用于 hexo-deployer-git
 # deploy:
 #   type: git
 #   repo: 
