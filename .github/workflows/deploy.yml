@@ -15,26 +15,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            ~/.npm  # 缓存全局包
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          node-version: "20"
 
       - name: Install Dependencies
         run: |
           npm install
-          # 本地安装，hexo-cli被安装到了项目的开发依赖中，也就是node_modules/.bin目录下
-          npm install hexo-cli --save-dev 
+          npm install hexo-cli -g
 
       - name: Generate Files
         run: |
-          npx hexo clean  # 使用 npx 查询命令
-          npx hexo generate
+          hexo clean  # 使用 npx 查询命令
+          hexo generate
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
