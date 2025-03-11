@@ -3,38 +3,42 @@ name: Deploy Hexo
 on:
   push:
     branches:
-      - main  # 根据你的源码分支修改
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
 
-    - name: Cache node modules
-      uses: actions/cache@v4
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            ~/.npm  # 缓存全局包
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-    - name: Install Dependencies
-      run: |
-        npm install
-        npm install hexo-cli --save-dev
+      - name: Install Dependencies
+        run: |
+          npm install
+          # 本地安装，hexo-cli被安装到了项目的开发依赖中，也就是node_modules/.bin目录下
+          npm install hexo-cli --save-dev 
 
-    - name: Generate Files
-      run: |
-        hexo clean
-        hexo generate
+      - name: Generate Files
+        run: |
+          npx hexo clean  # 使用 npx 查询命令
+          npx hexo generate
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.blog-deploy }}
-        publish_dir: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # GitHub 会在每次 workflow 运行时自动生成一个临时的 GITHUB_TOKEN，专门用于当前仓库的操作
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
