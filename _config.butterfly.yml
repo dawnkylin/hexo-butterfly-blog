@@ -57,8 +57,8 @@ code_blocks:
 #   icon: link || the description || color
 social:
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
-  fab fa-github: https://github.com/dawnkylin || Github || '#24292e'
+  fas fa-envelope: mailto:dawnkylin@163.com || Email || '#4a7dbe'
+  fas fa-rss-square: /atom.xml || RSS || 'gray'
 
 # --------------------------------------
 # Image Settings
@@ -456,7 +456,7 @@ photofigcaption: true
 
 # 复制相关配置
 copy:
-  enable: false
+  enable: true
   # Add the copyright information after copied content
   copyright:
     enable: false
@@ -915,7 +915,7 @@ fireworks:
 
 # Mouse click effects: Heart symbol
 click_heart:
-  enable: false
+  enable: true
   mobile: false
 
 # Mouse click effects: words
@@ -973,7 +973,7 @@ mermaid:
 # chartjs
 # see https://www.chartjs.org/docs/latest/
 chartjs:
-  enable: false
+  enable: true
   # Do not modify unless you understand how they work.
   # The default settings are only used when the MD syntax is not specified.
   # General font color for the chart

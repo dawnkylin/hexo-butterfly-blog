@@ -117,7 +117,47 @@ font:
 
 ### 文章的分类语法
 
-此处询问的deepseek：[Hexo Butterfly 主题文章分类设置 | dawnkylin's hexo_blog](https://dawnkylin.github.io/hexo-butterfly-blog/2025/03/03/Hexo/Butterfly%20%E6%96%87%E7%AB%A0%E5%88%86%E7%B1%BB/)。
+此处询问的deepseek：
+
+在 Hexo 中，文章的 Front Matter（头部元数据）通过 `categories` 字段添加分类。
+
+{% tabs 文章分类 %}
+<!-- tab 单类 -->
+```yaml
+---
+title: 我的文章标题
+date: 2023-01-01
+categories: 技术笔记
+---
+```
+<!-- endtab -->
+<!-- tab 多级分类 -->
+```yaml
+---
+title: 我的文章标题
+date: 2023-01-01
+categories:
+  - 技术笔记
+  - Hexo
+---
+```
+效果：  
+`技术笔记` → `Hexo`（父子层级关系）。
+<!-- endtab -->
+<!-- tab 并列 -->
+```yaml
+---
+title: 我的文章标题
+date: 2023-01-01
+categories:
+  - [技术笔记, Hexo]
+  - [生活杂谈]
+---
+```
+
+结果：文章被分类到`技术笔记 → Hexo` 和 `生活杂谈`。
+<!-- endtab -->
+{% endtabs %}
 
 ## 标签外挂
 
@@ -128,6 +168,47 @@ font:
 [Butterfly 文檔(四) 標簽外挂 | Butterfly](https://butterfly.js.org/posts/ceeb73f)
 
 ## 进阶使用
+
+### 插件
+
+{% hideToggle hexo-filter-nofollow %}
+{% note green 'fas fa-info' %}
+hexo-filter-nofollow add `rel="noopener external nofollow noreferrer"` to all external links for security, privacy and SEO. [Read more](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
+
+[hexojs/hexo-filter-nofollow: Add nofollow attribute to all external links automatically.](https://github.com/hexojs/hexo-filter-nofollow)
+{% endnote %}
+
+noopener（安全）、noreferrer（隐私）和nofollow（阻止权重传递）
+
+
+{% endhideToggle %}
+
+{% hideToggle hexo-generator-feed %}
+[hexojs/hexo-generator-feed: Feed generator for Hexo.](https://github.com/hexojs/hexo-generator-feed)
+{% endhideToggle %}
+
+### 图片压缩
+
+{% note blue 'fa fa-info-circle' %}
+图片压缩的显示优势和隐式优势挺多。
+{% endnote %}
+
+{% tabs 图片压缩 %}
+<!-- tab Imgbot -->
+[Imgbot · GitHub Marketplace](https://github.com/marketplace/imgbot)，一款 GitHub Marketplace App，安装后，会自动扫描指定仓库图片并压缩，然后提交 PR 给你。
+
+通过 .imgbotconfig 文件可设置压缩频率（每日/周/月）、排除文件路径、启用有损压缩等。
+
+
+结合 GitHub Actions 可实现自动合并 PR，减少手动操作（我觉得最好只用于图床）。
+
+[利用ImgBot自动压缩Github图床，加速访问 | 笑枕晚风の小站](https://blog.zgzheng.top/posts/63060/)
+
+<!-- endtab -->
+<!-- tab 其他 -->
+{% btn 'https://butterfly.js.org/posts/4073eda/#%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE',参考这篇文章,,purple outline block center %}
+<!-- endtab -->
+{% endtabs %}
 
 ### 侧边栏访客地图
 
@@ -157,7 +238,7 @@ bottom:
 
 ### 图标
 
-[Font Awesome](https://fontawesome.com/)
+[Find Icons with the Perfect Look & Feel | Font Awesome](https://fontawesome.com/icons)
 
 ## 部署博客到GitHub Pages
 

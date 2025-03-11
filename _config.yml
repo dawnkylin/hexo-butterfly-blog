@@ -120,3 +120,27 @@ search:
   field: post
   content: true
   # template: ./search.xml
+
+nofollow:
+  enable: true
+  # field - The scope you want the plugin to proceed, can be 'site' or 'post'. Default value is site.
+  # 'post' - Only add nofollow attribute to external links in your post content
+  # 'site' - Add nofollow attribute to external links of whole sites
+  field: site
+  exclude:
+    # - 'exclude1.com'
+    # - 'exclude2.com'
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
