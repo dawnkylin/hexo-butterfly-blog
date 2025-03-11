@@ -117,14 +117,14 @@ font:
 ## 标签外挂和进阶使用
 
 {% note orange 'fa fa-question' %}
-标签{% label 外挂 green%}？应该就是字面意思，是特别牛皮的标签！
+标签{% label 外挂 green %}？应该就是字面意思，是特别牛皮的标签！
 {% endnote %}
 
 ### Note 或者 Bootstrap Callout
 
 我认为这就是“装修过”的引用块，当然作用就不只是cite或quote了。
 
-{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger%}
+{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger %}
 
 ### Tag-hide
 
@@ -182,7 +182,7 @@ Any content (support inline tags too).
 
 ```md
 {% btn [url],[text],[icon],[color] [style] [layout] [position] [size] %}
-{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger%}
+{% btn 'https://butterfly.js.org/posts/ceeb73f/#Note-Bootstrap-Callout',看看它们的写法,fa fa-arrow-circle-right,purple outline block center larger %}
 ```
 
 ### label
@@ -212,7 +212,7 @@ Any content (support inline tags too).
 {% endgallery %}
 ```
 
-{% gallery true%}
+{% gallery true %}
 ![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
 ![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)
 ![](https://i.loli.net/2019/12/25/gEy5Zc1Ai6VuO4N.jpg)
@@ -232,7 +232,7 @@ Any content (support inline tags too).
 
 {% note blue 'fa fa-magic' %}
 需要在 front matter 给 series 属性一个值/名称。
-{% endnote%}
+{% endnote %}
 
 ### 侧边栏访客地图
 
