@@ -10,23 +10,10 @@ categories:
 keywords:
 description:
 top_img:
-comments:
 cover:
-toc:
-toc_number:
-toc_style_simple:
-copyright:
-copyright_author:
-copyright_author_href:
-copyright_url:
-copyright_info:
-mathjax:
+commets:
 katex:
 aplayer:
-highlight_shrink:
-aside:
-abcjs:
-noticeOutdate:
 ---
 
 在 Hexo 中，文章的 Front Matter（头部元数据）通过 `categories` 字段添加分类。以下是具体操作方法和常见用法：

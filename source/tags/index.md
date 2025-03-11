@@ -7,4 +7,5 @@ type: 'tags'
 orderby: random
 # 【可选】排序次序： 1（升序），-1（降序）
 order: 1
+comments: false
 ---
