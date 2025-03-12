@@ -169,6 +169,47 @@ categories:
 
 ## 进阶使用
 
+### 站点验证
+
+{% tabs 站点验证 %}
+<!-- tab Bing -->
+登录 [Bing Webmaster Tools](https://www.bing.com/webmasters)，进入网站验证界面，选择 “XML文件”验证方式。Bing会生成一个名为 BingSiteAuth.xml 的文件，将下载的 BingSiteAuth.xml 文件放到Hexo项目的 source 目录下。在Hexo配置文件中跳过渲染BingSiteAuth.xml文件：
+
+```yml
+# _config.yml
+skip_render:
+  - BingSiteAuth.xml
+```
+
+{% note pink 'fas fa-sticky-note' %}
+重新部署网站，在Bing Webmaster Tools验证成功后，Bing Webmaster Tools会提示你添加站点文件以加速处理：
+
+Your data and reports are being processed and it may take upto 48 hours to reflect. Meanwhile, to speed up the indexing process, please submit your sitemap by using the Sitemaps feature.
+{% endnote %}
+
+使用插件生成 sitemap：
+
+```bash
+npm install hexo-generator-sitemap --save
+```
+
+修改`_config.yml`：
+
+```yml
+sitemap:
+  path: sitemap.xml
+```
+
+登录Bing Webmaster Tools，提交 sitemap.xml 的URL（如your-site-url/sitemap.xml）。
+<!-- endtab -->
+<!-- tab 百度 -->
+百度不能爬取GitHub内容，所以需要自行购买域名、备案并添加CNAME记录。
+<!-- endtab -->
+{% endtabs %}
+
+
+
+
 ### 插件
 
 {% hideToggle hexo-filter-nofollow %}
