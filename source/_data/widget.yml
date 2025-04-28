@@ -1,7 +1,7 @@
 bottom:
-  - class_name: user-map
-    id_name: user-map
-    name: 访客地图
-    icon: fas fa-heartbeat
-    order:
-    html: "<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=t&d=8aBS7zwUlPwat5hnHqwNnsgHZ5uY8lZ0Q6BDddo2ZJc&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>"
+  # - class_name: user-map
+  #   id_name: user-map
+  #   name: 访客地图
+  #   icon: fas fa-heartbeat
+  #   order:
+  #   html: "<script type='text/javascript' id='clustrmaps' async src='https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=t&d=8aBS7zwUlPwat5hnHqwNnsgHZ5uY8lZ0Q6BDddo2ZJc&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>"

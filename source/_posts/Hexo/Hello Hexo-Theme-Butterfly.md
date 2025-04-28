@@ -1,7 +1,7 @@
 ---
 title: Hello, Hexo-Theme-Butterfly
 date: 2025-03-03 12:58:58
-updated: 2025-03-11 12:58:58
+updated: 2025-03-12 12:30:00
 tags:
   - Hexo 
   - Butterfly
@@ -9,10 +9,15 @@ tags:
 categories:
   - [Hexo]
   - [GitHub]
-keywords:
-description:
-top_img:
-cover:
+keywords: 
+  - Hexo
+  - Butterfly
+  - GitHub Pages
+  - 静态网站
+  - 个人博客
+description: hexo-theme-butterfly的搭建、部署和使用
+top_img: 
+cover: https://butterfly.js.org/img/butterfly-icon.png
 commets:
 katex:
 aplayer:
@@ -268,7 +273,8 @@ bottom:
 ```
 
 {% note orange 'fa-solid fa-circle-exclamation' %}
-这个会可能被广告插件拦截，请将网站添加到白名单或关闭拦截插件。
+- 这个会可能被广告插件拦截，请将网站添加到白名单或关闭拦截插件。
+- 每次要刷新首页才能显示，很鸡肋。
 {% endnote %}
 
 ### 自定义代码配色

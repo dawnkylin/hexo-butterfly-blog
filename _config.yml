@@ -51,7 +51,7 @@ highlight:
   auto_detect: true
   tab_replace: ''
   wrap: true
-  hljs: true
+  hljs: false
   exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
