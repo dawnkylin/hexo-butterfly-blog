@@ -5,11 +5,11 @@
 # Site
 title: dawnkylin's hexo-butterfly-blog
 subtitle: 'Code Lover'
-description: '面向世界编程'
+description: 
 keywords: 程序开发
 author: dawnkylin
 language: zh-CN
-timezone: ''
+timezone: 
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -93,9 +93,9 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# include:
+# exclude:
+# ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

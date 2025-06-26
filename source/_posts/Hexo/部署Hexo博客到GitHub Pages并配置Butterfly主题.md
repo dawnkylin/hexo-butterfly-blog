@@ -1,7 +1,7 @@
 ---
-title: Hello, Hexo-Theme-Butterfly
+title: 部署Hexo博客到GitHub Pages并配置Butterfly主题
 date: 2025-03-03 12:58:58
-updated: 2025-03-12 12:30:00
+updated: 2025-06-26 22:36:00
 tags:
   - Hexo 
   - Butterfly
@@ -15,68 +15,48 @@ keywords:
   - GitHub Pages
   - 静态网站
   - 个人博客
-description: hexo-theme-butterfly的搭建、部署和使用
-top_img: 
-cover: https://butterfly.js.org/img/butterfly-icon.png
-commets:
-katex:
-aplayer:
----
-
-本文关于hexo-theme-butterfly的搭建、部署和使用。
-
+description: 
 ---
 
 ## 初始化Hexo项目
 
+初始化Hexo：
+
 ```bash
 npm install hexo-cli -g
-hexo init <your-blogname>
-cd <your-blogname>
+hexo init 博客仓库名
+cd 博客仓库名
 npm install
 ```
 
-生成的项目中，`_config.yml`文件和`source`文件夹将是以后我们常常操作、修改的地方。
-
-`_config.yml`是配置文件，`source`包含了许多资源文件，如markdown、img 、js、css、html和搜索的数据文件。我们的博客位于`source/_post`文件夹下。 
-
-初始化Hexo项目过程中，EJS、Stylus和Markdown渲染引擎会默认安装，后面按需取舍。
+生成的仓库中，`_config.yml`是配置文件，`source`包含了许多资源文件，如markdown、img 、js、css、html和搜索的数据文件。我们的博客md文件位于`source/_post`文件夹下。
 
 ## 安装并应用Butterfly主题
 
-参考这篇文章：[Butterfly 文檔(一) 快速開始 | Butterfly](https://butterfly.js.org/posts/21cfbf15/)。
-
-其大致过程就是通过`git clone`或`npm`命令安装主题，然后设置`_config.yml`中`theme`，接着将`themes/butterfly/_config.yml`复制到根目录下的`_config.butterfly.yml`，没有就新建它，它的优先级比`_config.yml`高。
-
-{% note blue 'fa fa-pencil' %}
-作者在使用的过程发现使用`git clone`克隆的主题，在提交时会有警告和提示，然后将其转为sub module就好了。这个问题的根本原因就是`themes/butterfly`是别人的仓库，我们不能直接修改它。
-{% endnote %}
-
-{% note red 'fa fa-question' %}
-将`themes/butterfly`的`.git`文件删除也行，但是后续的主题升级怎么办呢？
-{% endnote %}
-
-将使用`git clone`克隆的主题转为sub module的过程如下：
+安装主题为子模块，位置为`theme`目录下：
 
 ```bash
-# 1. 移除已存在的主题目录（保留文件）
-git rm --cached themes/butterfly
-
-# 2. 添加为子模块
+# 添加为子模块
 git submodule add https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
-
-# 3. 初始化子模块
-git submodule init
-git submodule update
 
 # 后续更新主题命令
 cd themes/butterfly
 git pull origin master
 ```
 
+安装pug和stylus的渲染器：
+
+```bash
+npm install hexo-renderer-pug hexo-renderer-stylus --save
+```
+
+设置`_config.yml`中`theme`为`butterfly`。
+
+接着将`themes/butterfly/_config.yml`复制到博客仓库根目录下的`_config.butterfly.yml`，没有就新建它，它的优先级比`_config.yml`高，且之后`themes/butterfly/_config.yml`不再生效。
+
 ## 配置Buttefly
 
-详细过程在[Butterfly 文檔(三) 主題配置 | Butterfly](https://butterfly.js.org/posts/4aa8abbe/)。
+我只记录我解决的比较有价值的问题，更详细配置信息[参考官方文档](https://butterfly.js.org/posts/4aa8abbe/)。
 
 ### 头像、顶部图片的存放位置
 
@@ -94,30 +74,58 @@ disable_top_img: false
 default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
 ```
 
+## 评论系统
+
+之前用的waline，国内访问不了就放弃了。
+
+换成Giscus好一点，再使用watt toolkit就很舒服了，只是使用Giscus就不能设置最新评论卡片了。
+
+在https://giscus.app/配置好选项，之后就会在页面下部的启用Giscus一节里的JS代码里得到`_config.butterfly.yml`需要的参数值。
+
+```yml
+# Giscus
+# https://giscus.app/
+giscus:
+    repo: 
+    repo_id: 
+    category_id: 
+    light_theme: light
+    dark_theme: dark
+    js: 
+    option:
+        data-input-position: top
+        data-loading: lazy
+```
+
 ### 搜索引擎
 
 我浅浅配置过algolia，但是搜索效果不理想，网上也找不到详细配置文档，遂弃之，改用本地搜索[wzpan/hexo-generator-search: A plugin to generate search data for Hexo.](https://github.com/wzpan/hexo-generator-search)。
 
 ### 字体更换
 
-推荐一个中文免费字体CDN网站：[✨中文网字计划-提供便捷实用的全字符集中文渲染方案](https://chinese-font.netlify.app/zh-cn/)。
+查找免费字体CDN的方式：
+
+- [ZSFT](https://fonts.zeoseven.com/)
+- [中文网字计划](https://chinese-font.netlify.app/zh-cn/)
+- 在jsDelivr、UNPKG、cdnjs等CDN上查找
 
 复制喜欢的字体link到`_config.butterfly.yml`的`inject`：
 
 ```yml
 inject:
   head:
-    - <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/sypxzs/dist/思源屏显臻宋/result.css' />
+      - <link href=" https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css " rel="stylesheet">
+      - <link rel="stylesheet" href="/hexo-butterfly-blog/self/custom.css">
 ```
 
 再设置相应的字体：
 
 ```yml
 font:
-  global_font_size: 16px
-  code_font_size: 16px
-  font_family: Consolas, 'Source Han Serif CN for Display'
-  code_font_family: Consolas, 'Source Han Serif CN for Display'
+  global_font_size: 18px
+  code_font_size: 18px
+  font_family: LXGW WenKai Screen
+  code_font_family: LXGW WenKai Screen
 ```
 
 ### 文章的分类语法
