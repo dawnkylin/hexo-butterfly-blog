@@ -74,7 +74,7 @@ disable_top_img: false
 default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
 ```
 
-## 评论系统
+### 评论系统
 
 之前用的waline，国内访问不了就放弃了。
 
