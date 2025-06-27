@@ -214,6 +214,8 @@ sitemap:
 ```
 
 登录Bing Webmaster Tools，提交 sitemap.xml 的URL（如your-site-url/sitemap.xml）。
+
+过一段时间后在Bing搜索引擎搜索`site:your-site-url`，就能看到站点哪些页面被索引了。
 <!-- endtab -->
 <!-- tab 百度 -->
 百度不能爬取GitHub内容，所以需要自行购买域名、备案并添加CNAME记录。
