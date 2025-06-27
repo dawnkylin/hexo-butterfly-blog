@@ -148,3 +148,8 @@ feed:
 
 sitemap:
   path: sitemap.xml
+
+# 由于需要全局都插入 aplayer 和 meting 资源，为了防止插入重复的资源，需要把 asset_inject 设为 false
+aplayer:
+  meting: true
+  asset_inject: false
