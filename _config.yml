@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: dawnkylin's hexo-butterfly-blog
-subtitle: 'Code Lover'
-description: 
-keywords: 程序开发
+title: dawnkylin
+subtitle: 想自由
+description: 记录一切值得记录的东西
+keywords: 博客,笔记,个人生活,程序开发,编程,学习,计算机,操作系统,数据库,前端,后端,JavaScript,NodeJS,Vue,React,TypeScript
 author: dawnkylin
 language: zh-CN
 timezone: 
