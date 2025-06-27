@@ -692,6 +692,7 @@ giscus:
     dark_theme: dark
     js: 
     option:
+        data-lang: zh-CN
         data-input-position: top
         data-loading: lazy
 
@@ -1032,7 +1033,7 @@ note:
 
 # https://github.com/MoOx/pjax
 pjax:
-    enable: false
+    enable: true
     # Exclude the specified pages from pjax, such as '/music/'
     exclude:
         # - /xxxxxx/
