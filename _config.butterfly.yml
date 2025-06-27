@@ -466,9 +466,9 @@ rightside_item_order:
 # 页面锚点
 anchor:
     # When you scroll, the URL will update according to header id.
-    auto_update: true
+    auto_update: false
     # Click the headline to scroll and update the anchor
-    click_to_scroll: true
+    click_to_scroll: false
 
 # 图片描述
 # 优先显示图片的 title 属性，然后是 alt 属性
