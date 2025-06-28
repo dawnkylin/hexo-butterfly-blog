@@ -1,7 +1,7 @@
 ---
 title: 部署Hexo博客到GitHub Pages并配置Butterfly主题
 date: 2025-03-03 12:58:58
-updated: 2025-06-26 22:36:00
+updated: 2025-06-28 12:00:00
 tags:
   - Hexo 
   - Butterfly
@@ -33,7 +33,7 @@ npm install
 
 ## 安装并应用Butterfly主题
 
-安装主题为子模块，位置为`theme`目录下：
+安装主题为子模块（官方文档直接克隆的，都行），位置为`theme`目录下：
 
 ```bash
 # 添加为子模块
@@ -60,7 +60,9 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save
 
 ### 头像、顶部图片的存放位置
 
-头像和顶部图片放在`source/img`下，路径使用相对路径`/img/<filename>`即可，但是最后生成的地址是要加上`<your-blogname>`的：`https://your-username.github.io/your-blogname/img/<filename>`。头像会自动加，顶部图片却不会，需要手动加：
+如果不是直接使用的`xxx.github.io`，而是`xxx.github.io/your-blogname`，则要注意以下事情：
+
+头像和顶部图片放在`source/img`下，路径使用相对路径`/img/<filename>`即可，但是最后生成的地址是要加上`<your-blogname>`的：`https://your-username.github.io/your-blogname/img/<filename>`。头像会自动加，顶部图片却不会，需要手动加，反正一般使用`/img/<filename>`，除非遇到`img`目录下图片无法显示。
 
 ```yml
 avatar:
@@ -80,7 +82,7 @@ default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
 
 换成Giscus好一点，再使用watt toolkit就很舒服了，只是使用Giscus就不能设置最新评论卡片了。
 
-在https://giscus.app/配置好选项，之后就会在页面下部的启用Giscus一节里的JS代码里得到`_config.butterfly.yml`需要的参数值。
+在[Giscus App](https://giscus.app/)配置好选项，之后就会在页面下部的“启用Giscus“一节里的JS代码里得到`_config.butterfly.yml`需要的参数值。
 
 ```yml
 # Giscus
@@ -93,6 +95,7 @@ giscus:
     dark_theme: dark
     js: 
     option:
+        data-lang: zh-CN
         data-input-position: top
         data-loading: lazy
 ```
@@ -172,6 +175,55 @@ categories:
 <!-- endtab -->
 {% endtabs %}
 
+## 文章写作及本地预览
+
+在`source/_posts`目录下可以建立我们的markdown文章，其下可以分多个目录表示分类，单篇文章既可以是单个文件，也可以是一个文件夹，文件夹里有一个`index.md`就是文章源文件，还可以放一些其他文件，如图片、视频等，但一般不建议，因为静态资源会拖慢网站的加载速度。目录结构示例：
+
+```plaintext
+├ source
+├─ _posts
+├── 前端
+├─── 前端技术概览.md
+├─── Vue
+├──── Vue的响应式原理.md
+├──── Vue组件间的通信
+├───── index.md
+└── 后端
+```
+
+与一般的markdown文件不同，我们需要在文章开头添加一些元数据，称为Front Matter，如标题、发布日期、更新日期、分类、标签等。
+
+```plaintext
+---
+title: Vue的响应式原理
+date: 2023-01-01 12:00:00
+updated: 2023-01-02 12:00:00
+categories:
+  - Vue
+tags:
+  - Vue
+  - 响应式原理
+---
+```
+
+更多详细元数据参考[Butterfly 文档(二) 主题页面](https://butterfly.js.org/posts/dc584b87/)。
+
+接下来，开始构建网站，并启动Hexo本地服务器，访问`localhost:4000`即可预览博客。
+
+```bash
+hexo clean && hexo g && hexo s
+```
+
+如果不想每次都输入这么长的命令，可以在`package.json`中添加脚本：
+
+```json
+"scripts": {
+    "server": "hexo clean && hexo g && hexo s"
+}
+```
+
+这样就可以使用`npm run server`启动本地服务器。
+
 ## 标签外挂
 
 {% note orange 'fa fa-question' %}
@@ -222,9 +274,6 @@ sitemap:
 <!-- endtab -->
 {% endtabs %}
 
-
-
-
 ### 插件
 
 {% hideToggle hexo-filter-nofollow %}
@@ -235,7 +284,6 @@ hexo-filter-nofollow add `rel="noopener external nofollow noreferrer"` to all ex
 {% endnote %}
 
 noopener（安全）、noreferrer（隐私）和nofollow（阻止权重传递）
-
 
 {% endhideToggle %}
 
@@ -254,7 +302,6 @@ noopener（安全）、noreferrer（隐私）和nofollow（阻止权重传递）
 [Imgbot · GitHub Marketplace](https://github.com/marketplace/imgbot)，一款 GitHub Marketplace App，安装后，会自动扫描指定仓库图片并压缩，然后提交 PR 给你。
 
 通过 .imgbotconfig 文件可设置压缩频率（每日/周/月）、排除文件路径、启用有损压缩等。
-
 
 结合 GitHub Actions 可实现自动合并 PR，减少手动操作（我觉得最好只用于图床）。
 
