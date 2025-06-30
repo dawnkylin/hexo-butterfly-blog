@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://dawnkylin.github.io/hexo-butterfly-blog
 root: /hexo-butterfly-blog/
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
     trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -197,3 +197,12 @@ douban:
             - wish
             - collect
         option:
+
+hexo_indexnow:
+  count: latest # 数字或者"latest"(=1)
+  txt_name: 2d2862fcf88a478fa7fe98a7c3db09c8.txt # 链接文件名
+  apikey: 2d2862fcf88a478fa7fe98a7c3db09c8 # 你的apikey
+  server: bing # indexnow服务器,可选值有:bing、yandex、indexnow
+
+deploy:
+  - type: indexnow_url_submitter
