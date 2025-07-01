@@ -9,7 +9,7 @@ categories:
 keywords:
   - Hexo
   - IndexNow
-abbrlink: 29385
+abbrlink: 2192425252
 date: 2025-06-28 12:00:00
 updated: 2025-06-28 12:00:00
 ---
