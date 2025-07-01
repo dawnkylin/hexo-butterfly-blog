@@ -1,16 +1,17 @@
 ---
 title: IndexNow介绍及在Hexo中的使用
-date: 2025-06-28 12:00:00
-updated: 2025-06-28 12:00:00
 tags:
   - Hexo
   - IndexNow
 categories:
-  - [Hexo]
-  - [SEO]
-keywords: 
+  - - Hexo
+  - - SEO
+keywords:
   - Hexo
   - IndexNow
+abbrlink: 29385
+date: 2025-06-28 12:00:00
+updated: 2025-06-28 12:00:00
 ---
 ## 什么是IndexNow
 

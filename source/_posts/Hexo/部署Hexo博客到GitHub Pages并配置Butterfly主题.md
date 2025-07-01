@@ -1,21 +1,22 @@
 ---
 title: 部署Hexo博客到GitHub Pages并配置Butterfly主题
-date: 2025-03-03 12:58:58
-updated: 2025-06-28 12:00:00
 tags:
-  - Hexo 
+  - Hexo
   - Butterfly
   - GitHub Pages
 categories:
-  - [Hexo]
-  - [GitHub]
-keywords: 
+  - - Hexo
+  - - GitHub
+keywords:
   - Hexo
   - Butterfly
   - GitHub Pages
   - 静态网站
   - 个人博客
-description: 
+abbrlink: 64269
+date: 2025-03-03 12:58:58
+updated: 2025-06-28 12:00:00
+description:
 ---
 
 ## 初始化Hexo项目
