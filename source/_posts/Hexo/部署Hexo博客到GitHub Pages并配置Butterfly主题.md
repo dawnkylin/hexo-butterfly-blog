@@ -79,7 +79,7 @@ default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
 
 之前用的waline，国内访问不了就放弃了。
 
-换成Giscus好一点，再使用watt toolkit就很舒服了，只是使用Giscus就不能设置最新评论卡片了。
+换成Giscus好一点，再使用watt toolkit加Dev-Sidebar就很舒服了，只是使用Giscus就不能设置最新评论卡片了。
 
 在[Giscus App](https://giscus.app/)配置好选项，之后就会在页面下部的“启用Giscus“一节里的JS代码里得到`_config.butterfly.yml`需要的参数值。
 
@@ -233,11 +233,13 @@ hexo clean && hexo g && hexo s
 
 ## 进阶使用
 
-### 站点验证
+### Bing 收录配置
 
-{% tabs 站点验证 %}
-<!-- tab Bing -->
-登录 [Bing Webmaster Tools](https://www.bing.com/webmasters)，进入网站验证界面，选择“XML文件”验证方式。Bing会生成一个名为 BingSiteAuth.xml 的文件，将下载的 BingSiteAuth.xml 文件放到Hexo项目的 source 目录下。在Hexo配置文件中跳过渲染BingSiteAuth.xml文件：
+（1）验证站点
+
+登录 [Bing Webmaster Tools](https://www.bing.com/webmasters)，进入网站验证界面，选择“XML文件”验证方式。Bing会生成一个名为 BingSiteAuth.xml 的文件，将下载的 BingSiteAuth.xml 文件放到Hexo项目的 source 目录下。
+
+在Hexo配置文件中跳过渲染BingSiteAuth.xml文件：
 
 ```yml
 # _config.yml
@@ -245,13 +247,13 @@ skip_render:
   - BingSiteAuth.xml
 ```
 
-{% note pink 'fas fa-sticky-note' %}
+（2）添加sitemap.xml
+
 重新部署网站，在Bing Webmaster Tools验证成功后，Bing Webmaster Tools会提示你添加站点文件以加速处理：
 
 Your data and reports are being processed and it may take upto 48 hours to reflect. Meanwhile, to speed up the indexing process, please submit your sitemap by using the Sitemaps feature.
-{% endnote %}
 
-使用插件生成 sitemap：
+安装插件hexo-generator-sitemap生成 sitemap：
 
 ```bash
 npm install hexo-generator-sitemap --save
@@ -264,20 +266,45 @@ sitemap:
   path: sitemap.xml
 ```
 
-登录Bing Webmaster Tools，提交 sitemap.xml 的URL（如your-site-url/sitemap.xml）。
+重新部署网站。
 
-过一段时间后在Bing搜索引擎搜索`site:your-site-url`，就能看到站点哪些页面被索引了。
-<!-- endtab -->
-<!-- tab 百度 -->
-百度不能爬取GitHub内容，所以需要自行购买域名、备案并添加CNAME记录。
-<!-- endtab -->
-{% endtabs %}
+登录Bing Webmaster Tools，提交 sitemap.xml 的URL（如your-site-url/sitemap.xml）。sitemap.xml里必须是规范的URL。
 
-Bing SEO优化：
+过一段时间后在Bing搜索引擎搜索`site:your-site-url`，就能看到站点哪些页面被索引了。如果很长时间没有被索引，可以联系官方（或发邮件给 bwtsupport@microsoft.com）询问具体情况，如网站是不是被拉黑了。
 
- - Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools手动重传。
- - sitemap.xml里必须是规范的URL。若是使用hexo-abbrlink插件生成永久链接，则需要根据格式修改站点配置：
-  
+Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools手动重传。
+
+（3）修改文章节选配置长度
+
+Bing搜索引擎爬网程序仅在搜索结果页面中显示该说明的前 150-160 个字符，因此如果说明过长，搜索者可能无法看到所有文本；如果说明过短，搜索引擎可能会添加在页面其他位置找到的文本内容。请注意，如果搜索引擎认为其他说明与用户搜索内容的相关性更高，则可能会显示其他说明，而非你编写的说明。
+
+可以将`<meta description>` 标记中的描述长度更改为介于 25 到 160 个字符之间。配置如下：
+
+```yml
+# _config.yml_
+# Display the article introduction on homepage
+# 1: description
+# 2: both (if the description exists, it will show description, or show the auto_excerpt)
+# 3: auto_excerpt (default)
+# false: do not show the article introduction
+index_post_content:
+    method: 2
+    # If you set method to 2 or 3, the length need to config
+    length: 160
+```
+
+（4）无效页面删除
+
+若是索引页面无法访问，可以使用[Bing 内容删除工具](https://www.bing.com/webmasters/tools/contentremoval)删除。
+
+更多Bing站点管理指南可参考[Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a)。
+
+### 有用的插件
+
+#### hexo-abbrlink
+
+为了避免我们需要时常修改博客文件名或者`title`元数据而导致原链接失效，就不能使用文件路径或标题作为url的一部分，hexo-abbrlink插件可以为文章生成一个固定的使用crc16或crc32算法生成的十进制或十六进制数字标识。配置如下：
+
 ```yml
 # _config.yml
 permalink: posts/:abbrlink/
@@ -290,26 +317,15 @@ pretty_urls:
   trailing_html: false # Set to false to remove trailing '.html' from permalinks
 ```
 
-- 若是索引页面无法访问，可以使用[Bing 内容删除工具](https://www.bing.com/webmasters/tools/contentremoval)删除。
+#### hexo-filter-nofollow
 
-具体可参考[Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a)。
-
-### 插件
-
-{% hideToggle hexo-filter-nofollow %}
-{% note green 'fas fa-info' %}
-hexo-filter-nofollow add `rel="noopener external nofollow noreferrer"` to all external links for security, privacy and SEO. [Read more](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
-
-[hexojs/hexo-filter-nofollow: Add nofollow attribute to all external links automatically.](https://github.com/hexojs/hexo-filter-nofollow)
-{% endnote %}
+给所有外部链接添加`rel="noopener external nofollow noreferrer"`属性以增强安全性和SEO。
 
 noopener（安全）、noreferrer（隐私）和nofollow（阻止权重传递）
 
-{% endhideToggle %}
+#### hexo-generator-feed
 
-{% hideToggle hexo-generator-feed %}
-[hexojs/hexo-generator-feed: Feed generator for Hexo.](https://github.com/hexojs/hexo-generator-feed)
-{% endhideToggle %}
+生成订阅文件。
 
 ### 图片压缩
 
