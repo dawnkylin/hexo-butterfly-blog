@@ -1,23 +1,19 @@
-- class_name: 友情链接
-  class_desc: 那些人，那些事
-  link_list:
-    - name: Hexo
-      link: https://hexo.io/zh-tw/
-      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、简单且强大的网志框架
+# - class_name: 友情链接
+#   class_desc: 那些人，那些事
+#   link_list:
+#     - name: Hexo
+#       link: https://hexo.io/zh-tw/
+#       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+#       descr: 快速、简单且强大的网志框架
 
 - class_name: 网站
-  class_desc: 值得推荐的网站
+  class_desc: 我的其他网站
   link_list:
-    # - name: Youtube
-    #   link: https://www.youtube.com/
-    #   avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-    #   descr: 视频网站
-    - name: Weibo
-      link: https://www.weibo.com/
-      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
-      descr: 中国最大社交分享平台
-    # - name: Twitter
-    #   link: https://twitter.com/
-    #   avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
-    #   descr: 社交分享平台
+    - name: 我的CSDN博客
+      link: https://blog.csdn.net/dawn_kylin?spm=1000.2115.3001.5343
+      avatar: https://g.csdnimg.cn/static/logo/favicon32.ico
+      descr: CSDN是全球知名中文IT技术交流平台,创建于1999年,包含原创博客、精品问答、职业培训、技术论坛、资源下载等产品服务,提供原创、优质、完整内容的专业IT技术开发社区.
+    - name: 我的博客园博客
+      link: https://www.cnblogs.com/kFM9j5ONLe
+      avatar: https://raw.githubusercontent.com/dawnkylin/images/main/2025/20250702142725619.ico
+      descr: 冰冻三尺，非一日之寒；滴水穿石，非一日之功

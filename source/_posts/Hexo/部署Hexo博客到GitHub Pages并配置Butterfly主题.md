@@ -237,7 +237,7 @@ hexo clean && hexo g && hexo s
 
 {% tabs 站点验证 %}
 <!-- tab Bing -->
-登录 [Bing Webmaster Tools](https://www.bing.com/webmasters)，进入网站验证界面，选择 “XML文件”验证方式。Bing会生成一个名为 BingSiteAuth.xml 的文件，将下载的 BingSiteAuth.xml 文件放到Hexo项目的 source 目录下。在Hexo配置文件中跳过渲染BingSiteAuth.xml文件：
+登录 [Bing Webmaster Tools](https://www.bing.com/webmasters)，进入网站验证界面，选择“XML文件”验证方式。Bing会生成一个名为 BingSiteAuth.xml 的文件，将下载的 BingSiteAuth.xml 文件放到Hexo项目的 source 目录下。在Hexo配置文件中跳过渲染BingSiteAuth.xml文件：
 
 ```yml
 # _config.yml
@@ -272,6 +272,27 @@ sitemap:
 百度不能爬取GitHub内容，所以需要自行购买域名、备案并添加CNAME记录。
 <!-- endtab -->
 {% endtabs %}
+
+Bing SEO优化：
+
+ - Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools。
+ - sitemap.xml里必须是规范的URL。若是使用hexo-abbrlink插件生成永久链接，则需要根据格式修改站点配置：
+  
+```yml
+# _config.yml
+permalink: posts/:abbrlink
+abbrlink:
+  alg: crc32 #算法： crc16(default) and crc32
+  rep: hex #进制： dec(default) and hex
+permalink_defaults:
+pretty_urls:
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+```
+
+- 若是索引页面无法访问，可以使用[Bing 内容删除工具](https://www.bing.com/webmasters/tools/contentremoval)删除。
+
+具体可参考[Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmasters-guidelines-30fba23a)。
 
 ### 插件
 
