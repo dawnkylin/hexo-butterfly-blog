@@ -275,12 +275,12 @@ sitemap:
 
 Bing SEO优化：
 
- - Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools。
+ - Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools手动重传。
  - sitemap.xml里必须是规范的URL。若是使用hexo-abbrlink插件生成永久链接，则需要根据格式修改站点配置：
   
 ```yml
 # _config.yml
-permalink: posts/:abbrlink
+permalink: posts/:abbrlink/
 abbrlink:
   alg: crc32 #算法： crc16(default) and crc32
   rep: hex #进制： dec(default) and hex
