@@ -12,6 +12,7 @@ keywords:
 abbrlink: 82adc124
 date: 2025-06-28 12:00:00
 updated: 2025-06-28 12:00:00
+description: 本文主要是关于IndexNow的简介和使用，其中在Hexo博客中的使用主要说了一个hexo-indexnow插件。
 ---
 ## 什么是IndexNow
 

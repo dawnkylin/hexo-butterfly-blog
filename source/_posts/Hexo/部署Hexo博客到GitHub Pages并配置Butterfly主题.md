@@ -3,7 +3,8 @@ title: 部署Hexo博客到GitHub Pages并配置Butterfly主题
 tags:
   - Hexo
   - Butterfly
-  - GitHub Pages
+  - GitHub
+  - Pages
 categories:
   - - Hexo
   - - GitHub
@@ -16,6 +17,7 @@ keywords:
 abbrlink: c74e2549
 date: 2025-03-03 12:58:58
 updated: 2025-06-28 12:00:00
+description: 本文主要是介绍如何初始化Hexo项目，安装并应用Butterfly主题，然后部署到GitHub Pages。其中围绕着网站、主题的配置记录了一些重点内容，更对Bing的搜录做了较详细的指引
 ---
 ## 初始化Hexo项目
 
@@ -274,11 +276,13 @@ sitemap:
 
 Bing会定期抓取sitemap，但是如果网站出现重大变化，还是建议使用Bing Webmaster Tools手动重传。
 
-（3）修改文章节选配置长度
+（3）填写符合要求的`description`Front Matter
 
 Bing搜索引擎爬网程序仅在搜索结果页面中显示该说明的前 150-160 个字符，因此如果说明过长，搜索者可能无法看到所有文本；如果说明过短，搜索引擎可能会添加在页面其他位置找到的文本内容。请注意，如果搜索引擎认为其他说明与用户搜索内容的相关性更高，则可能会显示其他说明，而非你编写的说明。
 
-可以将`<meta description>` 标记中的描述长度更改为介于 25 到 160 个字符之间。配置如下：
+可以将`<meta description>` 标记中的描述长度更改为介于 25 到 160 个字符之间。
+
+修改文章节选配置以关闭自动节选功能：
 
 ```yml
 # _config.yml_
@@ -288,10 +292,11 @@ Bing搜索引擎爬网程序仅在搜索结果页面中显示该说明的前 150
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-    method: 2
+    method: 1
     # If you set method to 2 or 3, the length need to config
-    length: 160
+    length: 
 ```
+
 
 （4）无效页面删除
 
