@@ -1,18 +1,18 @@
 ---
 title: IndexNow介绍及在Hexo中的使用
-tags:
-  - Hexo
-  - IndexNow
-categories:
-  - - Hexo
-  - - SEO
+description: 本文主要是关于IndexNow的简介和使用。IndexNow是一个免费的的开源协议，用于你更新网站时及时通知搜索引擎列表同步。相比传统的web爬虫，IndexNow具有更快的索引速度和更低的资源成本。
 keywords:
   - Hexo
   - IndexNow
+categories:
+  - Hexo
+  - SEO
+tags:
+  - Hexo
+  - IndexNow
 abbrlink: 82adc124
-date: 2025-06-28 12:00:00
-updated: 2025-06-28 12:00:00
-description: 本文主要是关于IndexNow的简介和使用，其中在Hexo博客中的使用主要说了一个hexo-indexnow插件。
+date: 2025-06-28 12:00:01
+updated: 2025-06-28 12:00:01
 ---
 ## 什么是IndexNow
 
@@ -24,7 +24,7 @@ IndexNow是一个免费的的开源协议，用于你更新网站时及时通知
 
 以下是一些集成了IndexNow的内容管理解决方案（Content Management Solutions）：
 
-- WIX.com
+- WIX\.com
 - duda
 - GoDaddy
 - xenForo

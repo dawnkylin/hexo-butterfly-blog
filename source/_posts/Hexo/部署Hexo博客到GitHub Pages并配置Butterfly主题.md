@@ -1,23 +1,23 @@
 ---
 title: 部署Hexo博客到GitHub Pages并配置Butterfly主题
-tags:
-  - Hexo
-  - Butterfly
-  - GitHub
-  - Pages
-categories:
-  - - Hexo
-  - - GitHub
+description: 本文主要是介绍如何初始化Hexo项目，并为其安装和应用Butterfly主题，然后将其部署到GitHub Pages。其次还围绕着网站、主题的配置记录了一些重点内容。
 keywords:
   - Hexo
   - Butterfly
   - GitHub Pages
   - 静态网站
   - 个人博客
+categories:
+  - Hexo
+  - GitHub
+tags:
+  - Hexo
+  - Butterfly
+  - GitHub
+  - Pages
 abbrlink: c74e2549
 date: 2025-03-03 12:58:58
-updated: 2025-06-28 12:00:00
-description: 本文主要是介绍如何初始化Hexo项目，安装并应用Butterfly主题，然后部署到GitHub Pages。其中围绕着网站、主题的配置记录了一些重点内容，更对Bing的搜录做了较详细的指引
+updated: 2025-07-02T20:13:01
 ---
 ## 初始化Hexo项目
 
