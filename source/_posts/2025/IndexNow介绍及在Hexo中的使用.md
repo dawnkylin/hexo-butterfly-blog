@@ -5,8 +5,8 @@ keywords:
   - Hexo
   - IndexNow
 categories:
-  - Hexo
-  - SEO
+  - [Hexo]
+  - [SEO]
 tags:
   - Hexo
   - IndexNow

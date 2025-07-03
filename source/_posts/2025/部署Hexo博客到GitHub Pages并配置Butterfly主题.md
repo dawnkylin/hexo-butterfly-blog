@@ -8,8 +8,8 @@ keywords:
   - 静态网站
   - 个人博客
 categories:
-  - Hexo
-  - GitHub
+  - [Hexo]
+  - [GitHub]
 tags:
   - Hexo
   - Butterfly
