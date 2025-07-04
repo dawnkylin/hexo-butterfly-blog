@@ -27,9 +27,8 @@ menu:
     归档: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
-    影音与书籍 ||fas fa-list:
+    电影与书籍 ||fas fa-list:
         电影: /movies/ || fas fa-video
-        音乐: /songs/ || fas fa-music
         书籍: /books/ || fas fa-book
     友链: /link/ || fas fa-link
     关于: /about/ || fas fa-heart
@@ -467,9 +466,9 @@ rightside_item_order:
 # 页面锚点
 anchor:
     # When you scroll, the URL will update according to header id.
-    auto_update: false
+    auto_update: true
     # Click the headline to scroll and update the anchor
-    click_to_scroll: false
+    click_to_scroll: true
 
 # 图片描述
 # 优先显示图片的 title 属性，然后是 alt 属性
@@ -524,7 +523,7 @@ math:
     katex:
         # 启用复制 KaTeX 公式功能
         # Enable the copy KaTeX formula
-        copy_tex: false
+        copy_tex: true
 
 # --------------------------------------
 # Search

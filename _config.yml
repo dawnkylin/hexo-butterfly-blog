@@ -117,7 +117,7 @@ theme: butterfly
 
 markdown:
   plugins:
-    - "@renbaoshuo/markdown-it-katex"
+    - '@renbaoshuo/markdown-it-katex'
 
 search:
   path: search.xml
@@ -191,21 +191,11 @@ douban:
       - wish
       - collect
     option:
-  song:
-    path: songs/index.html
-    title: "我听的歌"
-    quote: "大家也分享下好听的歌吧！"
-    actions:
-      - do
-      - wish
-      - collect
-    option:
+# hexo_indexnow:
+#   count: latest # 数字或者"latest"(=1)
+#   txt_name: 2d2862fcf88a478fa7fe98a7c3db09c8.txt # 链接文件名
+#   apikey: 2d2862fcf88a478fa7fe98a7c3db09c8 # 你的apikey
+#   server: bing # indexnow服务器,可选值有:bing、yandex、indexnow
 
-hexo_indexnow:
-  count: latest # 数字或者"latest"(=1)
-  txt_name: 2d2862fcf88a478fa7fe98a7c3db09c8.txt # 链接文件名
-  apikey: 2d2862fcf88a478fa7fe98a7c3db09c8 # 你的apikey
-  server: bing # indexnow服务器,可选值有:bing、yandex、indexnow
-
-deploy:
-  - type: indexnow_url_submitter
+# deploy:
+#   - type: indexnow_url_submitter
