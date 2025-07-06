@@ -59,27 +59,9 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save
 
 我只记录我解决的比较有价值的问题，更详细配置信息[参考官方文档](https://butterfly.js.org/posts/4aa8abbe/)。
 
-### 头像、顶部图片的存放位置
-
-如果不是直接使用的`xxx.github.io`，而是`xxx.github.io/your-blogname`，则要注意以下事情：
-
-头像和顶部图片放在`source/img`下，路径使用相对路径`/img/<filename>`即可，但是最后生成的地址是要加上`<your-blogname>`的：`https://your-username.github.io/your-blogname/img/<filename>`。头像会自动加，顶部图片却不会，需要手动加，反正一般使用`/img/<filename>`，除非遇到`img`目录下图片无法显示。
-
-```yml
-avatar:
-  img: /img/avatar.png
-  effect: false
-
-# Disable all banner images
-disable_top_img: false
-
-# If the banner of page not setting, it will show the default_top_img
-default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
-```
-
 ### 评论系统
 
-之前用的waline，国内访问不了就放弃了。
+之前用的waline，国内访问不了而且评论存储在第三方就放弃了。
 
 换成Giscus好一点，再使用watt toolkit加Dev-Sidebar就很舒服了，只是使用Giscus就不能设置最新评论卡片了。
 

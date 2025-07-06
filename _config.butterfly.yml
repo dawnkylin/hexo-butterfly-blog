@@ -75,7 +75,7 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /hexo-butterfly-blog/img/default_top_img.jpg
+default_top_img: /img/default_top_img.jpg
 
 # The banner image of index page，主页的顶部图
 index_img:
@@ -106,7 +106,7 @@ category_per_img:
 # 颜色值：hex，rgb，颜色单词，渐变色 linear-gradient
 # transparent
 # true：和当前页顶部图一样
-footer_img:
+footer_img: linear-gradient(to top, rgb(244, 59, 71) 0%, rgb(69, 58, 148) 100%)
 
 # Website Background
 # Can set it to color or image url
@@ -390,7 +390,7 @@ aside:
     card_post_series:
         enable: true
         # The title shows the series name
-        series_title: false
+        series_title: true
         # Order by title or date
         orderBy: "date"
         # Sort of order. 1, asc for ascending; -1, desc for descending
@@ -523,7 +523,7 @@ math:
     katex:
         # 启用复制 KaTeX 公式功能
         # Enable the copy KaTeX formula
-        copy_tex: true
+        copy_tex: false
 
 # --------------------------------------
 # Search
@@ -1103,7 +1103,7 @@ css_prefix: false
 inject:
     head:
         - <link href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/lxgwwenkaigbscreen.min.css" rel="stylesheet">
-        - <link rel="stylesheet" href="/hexo-butterfly-blog/self/custom.css">
+        - <link rel="stylesheet" href="/hexo-butterfly-blog/css/custom.css">
     bottom:
         - <div class="aplayer no-destroy" data-id="12622689920" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false"> </div>
 
@@ -1115,7 +1115,7 @@ CDN:
     # Note: Dev version can only use 'local' for internal scripts
     # Note: When setting third-party scripts to 'local', you need to install hexo-butterfly-extjs
     internal_provider: local
-    third_party_provider: cdnjs
+    third_party_provider: unpkg
 
     # Add version number to url, true or false
     version: false

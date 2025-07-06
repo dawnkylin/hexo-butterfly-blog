@@ -1,0 +1,21 @@
+.layout {
+    max-width: 90vw;
+}
+
+.container.post-content h2 {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.container.post-content h3 {
+    padding-left: 24px;
+    color: violet;
+}
+
+/* .katex {
+    display: contents;
+}
+
+.katex-html{
+    display: none;
+} */
