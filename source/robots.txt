@@ -2,10 +2,10 @@ User-agent: *
 Allow: /hexo-butterfly-blog/
 Allow: /hexo-butterfly-blog/link/
 Disallow: /
-Disallow: /hexo-butterfly-blog/archives/
-Disallow: /hexo-butterfly-blog/categories/
-Disallow: /hexo-butterfly-blog/tags/
-Disallow: /hexo-butterfly-blog/about/
+Allow: /hexo-butterfly-blog/archives/
+Allow: /hexo-butterfly-blog/categories/
+Allow: /hexo-butterfly-blog/tags/
+Allow: /hexo-butterfly-blog/about/
 Disallow: /hexo-butterfly-blog/books/
 Disallow: /hexo-butterfly-blog/movies/
 Disallow: /hexo-butterfly-blog/songs/

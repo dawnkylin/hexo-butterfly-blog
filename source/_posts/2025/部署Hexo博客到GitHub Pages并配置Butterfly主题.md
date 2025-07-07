@@ -13,8 +13,7 @@ categories:
 tags:
   - Hexo
   - Butterfly
-  - GitHub
-  - Pages
+  - GitHub Pages
 abbrlink: c74e2549
 date: 2025-03-03 12:58:58
 updated: 2025-07-02 20:13:01

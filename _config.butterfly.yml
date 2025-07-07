@@ -149,7 +149,8 @@ post_meta:
         label: true
     post:
         # Choose: left / center
-        position: left
+        # 文章页 meta 显示的位置
+        position: center
         # Choose: created / updated / both
         date_type: both
         # Choose: date / relative
@@ -184,7 +185,7 @@ subtitle:
     # 1 - hitokoto.cn
     # 2 - https://api.aa1.cn/doc/yiyan.html
     # 3 - jinrishici.com
-    source: 1
+    source: 3
     # If you close the typewriter effect, the subtitle will only show the first line of sub
     sub:
 
@@ -848,7 +849,7 @@ preloader:
     # source
     # 1. fullpage-loading
     # 2. pace (progress bar)
-    source: 1
+    source: 2
     # pace theme (see https://codebyzach.github.io/pace/)
     pace_css_url:
 
@@ -860,7 +861,7 @@ display_mode: light
 
 # Configuration for beautifying the content of the article
 beautify:
-    enable: true
+    enable: false
     # Specify the field to beautify (site or post)
     field: post
     # Specify the icon to be used as a prefix for the title, such as '\f0c1'
@@ -893,7 +894,7 @@ hr_icon:
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
     enable: false
-    colorful: true
+    colorful: false
     shake: false
     mobile: false
 
@@ -914,7 +915,7 @@ canvas_ribbon:
 
 # Fluttering Ribbon
 canvas_fluttering_ribbon:
-    enable: true
+    enable: false
     mobile: false
 
 # canvas_nest
