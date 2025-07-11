@@ -448,4 +448,4 @@ url: https://your-domain.com
 root: /your-blogname/
 ```
 
-最后去站长网站修改网站名。
+最后去百度、Bing和谷歌的站长管理网站新增网站。
