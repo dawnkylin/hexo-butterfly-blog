@@ -166,6 +166,12 @@ inject:
 
 ## 插件安裝
 
+### 必安插件
+
+```bash
+npm install hexo-renderer-pug hexo-renderer-stylus --save
+```
+
 ### 永久链接
 
 一篇文章发布后，其链接最好不要经常修改，否则会导致搜索引擎索引失效，所以需要使用插件`hexo-abbrlink`为文章生成一个固定的使用crc16或crc32算法生成的十进制或十六进制数字标识。
