@@ -36,6 +36,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - BingSiteAuth.xml
+  - googleaa5f95d66f824da7.html
   - .obsidian
 
 # Writing
