@@ -22,7 +22,7 @@ updated: 2025-07-02 20:13:01
 
 初始化Hexo：
 
-```bash
+```
 npm install hexo-cli -g
 hexo init 博客仓库名
 cd 博客仓库名
@@ -42,7 +42,6 @@ git submodule add https://github.com/jerryc127/hexo-theme-butterfly.git themes/b
 # 后续更新主题命令
 cd themes/butterfly
 git pull origin master
-
 ```
 
 应用主题：设置`_config.yml`中`theme`为`butterfly`。
@@ -163,6 +162,17 @@ inject:
   head:
     - <link rel="stylesheet" href="/hexo-butterfly-blog/css/code_theme.css">
 ```
+
+### 第三方CDN
+
+```yml
+internal_provider: local
+third_party_provider: unpkg
+```
+
+Butterfly的CDN配置分为内部和第三方，提供方可以选择`local/jsdelivr/unpkg/cdnjs/custom`中任意一个。
+
+cdnjs的版本比较落后，会导致与主题的默认配置不符；jsDelivr访问受限；unpkg勉强可以。
 
 ## 插件安裝
 

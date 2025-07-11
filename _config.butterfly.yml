@@ -27,9 +27,10 @@ menu:
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  电影与书籍 ||fas fa-list:
+  探索 ||fas fa-list:
     电影: /movies/ || fas fa-video
     书籍: /books/ || fas fa-book
+    Todo清单: /todos/ || fas fa-square-check
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 
@@ -60,7 +61,7 @@ code_blocks:
 social:
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
   fas fa-envelope: mailto:dawnkylin@163.com || Email || '#4a7dbe'
-  fas fa-rss-square: /atom.xml || RSS || 'gray'
+  fas fa-rss-square: /atom.xml || RSS || '#4a7dbe'
 
 # --------------------------------------
 # Image Settings，图片设置
@@ -328,7 +329,7 @@ aside:
   card_author:
     # 是否显示作者卡片
     enable: true
-    description:
+    description: 叶底流光初炫，风过小池清浅。
     button:
       enable: true
       icon: fab fa-github
@@ -350,7 +351,7 @@ aside:
     sort_order:
   # 最新评论卡片
   card_newest_comments:
-    enable: true
+    enable: false
     sort_order:
     limit: 6
     # Unit: mins, save data to localStorage
