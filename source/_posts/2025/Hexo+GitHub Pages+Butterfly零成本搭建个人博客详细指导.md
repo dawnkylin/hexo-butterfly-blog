@@ -67,6 +67,8 @@ root: 位于url后，例如 /，/blog/，都行
 如果站点部署在GitHub Pages的子目录下，例如`https://你的GitHub用户名.github.io/blog/`，则需要将`root`设置为`/blog/`。
 
 如果站点位于另一个仓库，`url`设置为`https://你的GitHub用户名.github.io`或`https://你的GitHub用户名.github.io/仓库名`都行，`root`跟着设置就行。
+
+本文最后一节会介绍如何配置自定义域名，有想法的这里可以先空着。
 {% endnote %}
 
 ### 顶部图片
@@ -430,3 +432,20 @@ git remote add origin https://github.com/<your-username>/<your-blogname>.git
 1. [在 GitHub Pages 上部署 Hexo | Hexo](https://hexo.io/zh-cn/docs/github-pages)
 2. [将 Hexo 部署到 GitLab Pages | Hexo](https://hexo.io/zh-cn/docs/gitlab-pages)
 3. [一键部署 | Hexo](https://hexo.io/zh-cn/docs/one-command-deployment)
+
+## 使用cloudfare加速访问GitHub Pages
+
+1. 注册cloudfare账号。购买cloudfare免费套餐。之后会提供cloudfare ns服务器名称。
+2. 购买域名（我买的腾讯云，一年一块钱），需填写个人信息模板才能买，验证大概几分钟。
+3. 修改域名名称服务器为cloudfare ns服务器名称。
+4. 在cloudfare添加解析记录A类型和CNAME类型：{% inlineImg https://raw.githubusercontent.com/dawnkylin/images/main/2025/20250711160054182.png 50px %}
+5. 去`your-username.github.io`仓库下修改pages的自定义域名为你买的域名。大概十几分钟的TLS证书安装，之后就可以启用`Enforce HTTPS`了。
+
+修改配置文件`_config.yml`：
+
+```yml
+url: https://your-domain.com
+root: /your-blogname/
+```
+
+最后去站长网站修改网站名。
