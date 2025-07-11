@@ -55,11 +55,11 @@ highlight:
   auto_detect: true
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
   exclude_languages: ['mermaid']
 prismjs:
   preprocess: true
-  line_number: false
+  line_number: true
   tab_replace: ''
   exclude_languages: ['mermaid']
 
@@ -119,6 +119,7 @@ theme: butterfly
 markdown:
   plugins:
     - '@renbaoshuo/markdown-it-katex'
+    - 'markdown-it-checkbox'
 
 search:
   path: search.xml
@@ -155,7 +156,7 @@ sitemap:
 
 # 由于需要全局都插入 aplayer 和 meting 资源，为了防止插入重复的资源，需要把 asset_inject 设为 false
 aplayer:
-  meting: true
+  meting: false
   asset_inject: false
 
 douban:

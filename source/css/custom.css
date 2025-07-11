@@ -1,20 +1,31 @@
+@font-face {
+  font-family: Emoji;
+  src: local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Segoe UI Symbol"), local("Noto Color Emoji");
+  unicode-range: U+1F000-1F644, U+203C-3299;
+}
+
 .layout {
-    max-width: 90vw;
+  max-width: 90vw;
 }
 
 .container.post-content h2 {
-    width: 100%;
-    border-bottom: 1px solid gray;
+  width: 100%;
+  border-bottom: 1px solid gray;
 }
 
 .container.post-content h3 {
-    color: violet;
+  color: violet;
 }
 
-/* .katex {
-    display: contents;
+ul:has(input[type="checkbox"]) {
+  list-style-type: none;
 }
 
-.katex-html{
-    display: none;
-} */
+[type="checkbox"] {
+  /* 调整位置 */
+  margin: 0 5px 0 -1em;
+  /* 与文字对齐 */
+  vertical-align: middle;
+  /* 不可勾选 */
+  pointer-events: none;
+}
