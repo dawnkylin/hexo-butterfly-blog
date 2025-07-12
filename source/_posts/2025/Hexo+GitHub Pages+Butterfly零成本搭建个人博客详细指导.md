@@ -15,8 +15,8 @@ tags:
   - Butterfly
   - GitHub Pages
 abbrlink: c74e2549
-date: 2025-03-03 12:58:58
-updated: 2025-07-02 20:13:01
+date: 2025-03-03 12:58:00
+updated: 2025-07-12 10:42:49
 ---
 ## 初始化Hexo项目
 
@@ -359,6 +359,18 @@ tags:
   - Vue
   - 响应式原理
 ---
+```
+
+手动建立文章并设置Front Matter有点麻烦，所以可以使用Hexo的脚手架命令：
+
+![hexo new命令格式](https://raw.githubusercontent.com/dawnkylin/images/main/2025/20250712103054175.png)
+
+draft表示草稿文章，默认不显示草稿文件，但可以在Hexo运行时添加`--draft`参数或在`_config.xml`中启用`render_drafts`来显示草稿。
+
+草稿可以通过发布来移动到`_posts`目录下，命令格式为：
+
+```bash
+hexo publish [layout] <title>
 ```
 
 ### 分类语法
