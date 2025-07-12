@@ -456,7 +456,7 @@ git remote add origin https://github.com/<your-username>/<your-blogname>.git
 修改配置文件`_config.yml`：
 
 ```yml
-url: https://your-domain.com
+url: https://your-domain
 root: /your-blogname/
 ```
 

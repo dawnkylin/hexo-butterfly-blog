@@ -30,7 +30,6 @@ menu:
   探索 ||fas fa-list:
     电影: /movies/ || fas fa-video
     书籍: /books/ || fas fa-book
-    Todo清单: /todos/ || fas fa-square-check
   友链: /link/ || fas fa-link
   关于: /about/ || fas fa-heart
 

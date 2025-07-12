@@ -21,6 +21,9 @@ permalink: posts/:abbrlink/
 abbrlink:
   alg: crc32 #算法： crc16(default) and crc32
   rep: hex #进制： dec(default) and hex
+  drafts: true   # Whether to generate abbrlink for drafts. (false in default)
+  force: false    # Enable force mode. In this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had an abbrlink. (false in default)
+  writeback: true # Whether to write changes to front-matters back to the actual markdown files. (true in default)
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
